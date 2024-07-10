@@ -66,6 +66,22 @@ Perform that for every drive you want to mount on start (adding external drives,
 
 Most programs can be obtained using the built in `Discover` application.
 
+### Games
+
+It's necessary to disable the composer for gaming. Therefore I suggest the [Autocomposer Extension](#autocomposor) in the Discover store. It disables the Composer automagically as soon as you open a fullscreen application and therefore boosts performance.
+
+You should also enable the performance mode
+
+```bash
+sudo echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+```
+
+Edit the "performance" string to powersave to restore powersave mode.
+
+### Autocomposor
+
+Find the Autocomposer [here](https://store.kde.org/p/1502826)
+
 ### VSCode
 
 Download a .deb file from https://code.visualstudio.com/Download and run it with `apt install <code>.deb` as root
@@ -96,12 +112,15 @@ might be necessary:
 https://docs.docker.com/engine/install/ubuntu/
 
 #### It might be necessary to replace the os release
+
 For further info, check out the [Docker Website](https://docs.docker.com/engine/install/debian/#installation-methods)
+
 ```bash
 $(. /etc/os-release && echo "$VERSION_CODENAME")
 ```
 
 #### Setup Docker
+
 Set up Docker's apt repository
 
 ```bash
@@ -133,9 +152,11 @@ Verify that the Docker Engine installation is successful by running the hello-wo
 ```
 
 ### CUDA
+
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network
 
 Debian 12 Guide:
+
 - wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
 - sudo dpkg -i cuda-keyring_1.1-1_all.deb
 - sudo add-apt-repository contrib
